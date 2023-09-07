@@ -48,28 +48,39 @@ Cache<Integer, Integer> cache = new Cache<Integer, Integer>()
 ```
 ## 运行日志
 ```
-18:50:20.162 [main] DEBUG org.cache.load.LoadJson -- Loading json
-18:50:20.306 [main] DEBUG org.cache.core.Cache -- put key:2
-18:50:20.307 [main] DEBUG org.cache.core.Cache -- put key:3
-18:50:20.307 [main] DEBUG org.cache.core.Cache -- put key:4
-18:50:20.307 [main] DEBUG org.cache.load.LoadJson -- Loading completed
-18:50:20.307 [main] DEBUG org.cache.core.Cache -- remove key:2
-18:50:20.307 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
-18:50:20.307 [main] DEBUG org.cache.core.Cache -- put key:0 and set time
-18:50:21.157 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting json
-18:50:21.164 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting completed
-18:50:21.315 [main] DEBUG org.cache.core.Cache -- remove key:3
-18:50:21.315 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
-18:50:21.315 [main] DEBUG org.cache.core.Cache -- put key:1 and set time
-18:50:22.315 [main] DEBUG org.cache.core.Cache -- remove key:4
-18:50:22.315 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
-18:50:22.315 [main] DEBUG org.cache.core.Cache -- put key:2 and set time
-18:50:23.317 [main] DEBUG org.cache.core.Cache -- remove key:0
-18:50:23.317 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
-18:50:23.317 [main] DEBUG org.cache.core.Cache -- put key:3 and set time
-18:50:24.317 [main] DEBUG org.cache.core.Cache -- remove key:1
-18:50:24.317 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
-18:50:24.317 [main] DEBUG org.cache.core.Cache -- put key:4 and set time
-18:50:31.157 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting json
-18:50:31.158 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting completed
+19:06:56.818 [main] DEBUG org.cache.load.LoadJson -- Loading json
+19:06:56.940 [main] DEBUG org.cache.core.Cache -- put key:3
+19:06:56.941 [main] DEBUG org.cache.core.Cache -- put key:4
+19:06:56.941 [main] DEBUG org.cache.load.LoadJson -- Loading completed
+19:06:56.941 [main] DEBUG org.cache.core.Cache -- put key:0 and set time
+19:06:57.822 [Timer-0] DEBUG org.cache.load.LoadJson -- Timely expire
+19:06:57.822 [Timer-0] DEBUG org.cache.core.Cache -- remove key:0
+19:06:57.822 [Timer-0] DEBUG org.cache.load.LoadJson -- Timely expire completed
+19:06:57.823 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting json
+19:06:57.830 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting completed
+19:06:57.946 [main] DEBUG org.cache.core.Cache -- put key:1 and set time
+19:06:58.947 [main] DEBUG org.cache.core.Cache -- remove key:3
+19:06:58.947 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
+19:06:58.947 [main] DEBUG org.cache.core.Cache -- put key:2 and set time
+19:06:59.949 [main] DEBUG org.cache.core.Cache -- remove key:4
+19:06:59.949 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
+19:06:59.949 [main] DEBUG org.cache.core.Cache -- put key:3 and set time
+19:07:00.950 [main] DEBUG org.cache.core.Cache -- remove key:1
+19:07:00.950 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
+19:07:00.950 [main] DEBUG org.cache.core.Cache -- put key:4 and set time
+19:07:01.952 [main] DEBUG org.cache.load.LoadJson -- Lazy expire
+19:07:01.952 [main] DEBUG org.cache.core.Cache -- remove key:1
+19:07:01.952 [main] DEBUG org.cache.core.Cache -- remove key:2
+19:07:01.952 [main] DEBUG org.cache.evict.EvictLRU -- evict eldest key
+19:07:01.952 [main] DEBUG org.cache.core.Cache -- get key:1
+null
+19:07:02.835 [Timer-0] DEBUG org.cache.load.LoadJson -- Timely expire
+19:07:02.835 [Timer-0] DEBUG org.cache.core.Cache -- remove key:2
+19:07:02.835 [Timer-0] DEBUG org.cache.load.LoadJson -- Timely expire completed
+19:07:07.823 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting json
+19:07:07.823 [Timer-1] DEBUG org.cache.load.LoadJson -- Persisting completed
+19:07:07.835 [Timer-0] DEBUG org.cache.load.LoadJson -- Timely expire
+19:07:07.835 [Timer-0] DEBUG org.cache.core.Cache -- remove key:3
+19:07:07.835 [Timer-0] DEBUG org.cache.core.Cache -- remove key:4
+19:07:07.835 [Timer-0] DEBUG org.cache.load.LoadJson -- Timely expire completed
 ```

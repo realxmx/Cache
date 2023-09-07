@@ -45,6 +45,7 @@ Cache<Integer, Integer> cache = new Cache<Integer, Integer>()
                 System.out.println("中断");
             }
         }
+        System.out.println(cache.get(1));
 ```
 ## 运行日志
 ```
